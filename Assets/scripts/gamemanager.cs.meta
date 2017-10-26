@@ -1,10 +1,28 @@
 fileFormatVersion: 2
 guid: fbbd237354e6106408addc25ce176a48
-timeCreated: 1508400072
+timeCreated: 1509056454
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreLabel: {instanceID: 0}
+  - gameOverLabel: {instanceID: 0}
+  - restartGameButton: {instanceID: 0}
+  - enemyType1: {fileID: 1312148070767536, guid: f15e30a30e1530243b323241a66329a2,
+      type: 2}
+  - enemyType2: {fileID: 1493618020206020, guid: 1066c09403f3c49458a2131514d9d178,
+      type: 2}
+  - enemyType3: {fileID: 1677575866624796, guid: 29fedc42ee05b064a856ac536975f410,
+      type: 2}
+  - subBoss: {instanceID: 0}
+  - leftBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+      type: 2}
+  - rightBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+      type: 2}
+  - topBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+      type: 2}
+  - bottomBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -17,8 +17,8 @@ public class gamemanager : MonoBehaviour {
 
     public GameObject enemyType1;
     public GameObject enemyType2;
+    public GameObject enemyType3;
 
-    public GameObject subBoss;
 
     public float startWait = 1.0f;
     public float waveInterval = 2.0f;
@@ -54,7 +54,7 @@ public class gamemanager : MonoBehaviour {
                 Quaternion spawnRotation = Quaternion.Euler(0, 0, 180);
                 if (waveType >= 5.0f)
                 {
-                    GameObject enemy1 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 1");
+                    GameObject enemy1 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Type 1");
                     if (enemy1 != null)
                     {
                         enemy1.transform.position = spawnPosition;
