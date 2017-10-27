@@ -73,6 +73,11 @@ public class gamemanager : MonoBehaviour {
                         enemy2.SetActive(true);
                     }
                 }
+				
+				{
+							
+				
+                }
                 yield return new WaitForSeconds(spawnInterval);
             }
             yield return new WaitForSeconds(waveInterval);

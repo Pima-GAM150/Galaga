@@ -9,7 +9,10 @@ public class playerController : MonoBehaviour {
     public GameObject startWeapon;                              // The players initial 'turret' gameobject
                                                               
     public GameObject explosion;                                  // Reference to the Expolsion prefab
-    public GameObject playerBullet;                             // Reference to the players bullet prefab
+    public GameObject playerBullet;  
+	public GameObject turret; 
+	
+	// Reference to the players bullet prefab
                                                                 
     private Rigidbody2D playerRigidbody;                      // The players rigidbody: Required to apply directional force to move the player
     private Renderer playerRenderer;                            // The Renderer for the players ship sprite
@@ -82,10 +85,15 @@ public class playerController : MonoBehaviour {
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullet");
             if (bullet != null)
             {
-               // bullet.transform.position = turret.transform.position;
-                //bullet.transform.rotation = turret.transform.rotation;
-                //bullet.SetActive(true);
+                bullet.transform.position = turret.transform.position;
+                bullet.transform.rotation = turret.transform.rotation;
+                bullet.SetActive(true);
+				bullet.name = "Shot";
+				print("Shot! " + Time.time);
             }
+			else {
+				print( "Couldn't get bullet from pool" );
+			}
         }
         shootSoundFX.Play();
     }
@@ -103,10 +111,12 @@ public class playerController : MonoBehaviour {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullet");
                 if (bullet != null)
                 {
-                    //bullet.transform.position = turret.transform.position;
-                    //bullet.transform.rotation = turret.transform.rotation;
+                    bullet.transform.position = turret.transform.position;
+                    bullet.transform.rotation = turret.transform.rotation;
                     bullet.SetActive(true);
+					
                 }
+				
             }
             shootSoundFX.Play();
             //yield return new WaitForSeconds(scatterShotTurretReloadTime);

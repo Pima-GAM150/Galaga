@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fbbd237354e6106408addc25ce176a48
-timeCreated: 1509056454
+timeCreated: 1509070923
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -14,14 +14,13 @@ MonoImporter:
       type: 2}
   - enemyType3: {fileID: 1677575866624796, guid: 29fedc42ee05b064a856ac536975f410,
       type: 2}
-  - subBoss: {instanceID: 0}
-  - leftBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+  - leftBoundary: {fileID: 1575956253606348, guid: 8c19935b69bc2634487b8b4a4f039118,
       type: 2}
-  - rightBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+  - rightBoundary: {fileID: 1673377600573994, guid: 8c19935b69bc2634487b8b4a4f039118,
       type: 2}
-  - topBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+  - topBoundary: {fileID: 1244237384675444, guid: 8c19935b69bc2634487b8b4a4f039118,
       type: 2}
-  - bottomBoundary: {fileID: 1463660553087970, guid: 8c19935b69bc2634487b8b4a4f039118,
+  - bottomBoundary: {fileID: 1368121469409362, guid: 8c19935b69bc2634487b8b4a4f039118,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
