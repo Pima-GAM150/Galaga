@@ -3,7 +3,6 @@ using System.Collections;
 
 public class EnemyDroneController : MonoBehaviour {
 
-	public GameObject powerUp;
 	public GameObject explosion;
 	public GameObject smallEnemyBullet;
 	public float minReloadTime = 1.0f;

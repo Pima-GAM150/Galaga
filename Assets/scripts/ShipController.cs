@@ -6,19 +6,15 @@ public class ShipController : MonoBehaviour
 {
 
     public float moveSpeed = 10.0f;                             // The players movement speed
-    public float scatterShotTurretReloadTime = 2.0f;    // Reload time for the scatter shot turret!
     public GameObject startWeapon;                              // The players initial 'turret' gameobject
-    public List<GameObject> tripleShotTurrets;            //
-    public List<GameObject> wideShotTurrets;                // References to the upgrade weapon turrets
-    public List<GameObject> scatterShotTurrets;           //
-    public List<GameObject> activePlayerTurrets;          //
+    public List<GameObject> activePlayerTurrets;          
     public GameObject explosion;                                  // Reference to the Expolsion prefab
     public GameObject playerBullet;                             // Reference to the players bullet prefab
     public ParticleSystem playerThrust;             // The particle effect for the ships thruster
     private Rigidbody2D playerRigidbody;                      // The players rigidbody: Required to apply directional force to move the player
     private Renderer playerRenderer;                            // The Renderer for the players ship sprite
     private CircleCollider2D playerCollider;			    // The Players ship collider
-    public int upgradeState = 0;                                  // A reference to the upgrade state of the player
+                                     // A reference to the upgrade state of the player
 
     private GameObject leftBoundary;                   //
     private GameObject rightBoundary;                  // References to the screen bounds: Used to ensure the player
@@ -65,7 +61,7 @@ public class ShipController : MonoBehaviour
         {
         
         }
-        else if (other.gameObject.tag == "Enemy Ship 1" || other.gameObject.tag == "Enemy Ship 2" || other.gameObject.tag == "Enemy Laser")
+        else if (other.gameObject.tag == "Enemy Ship 1" || other.gameObject.tag == "Enemy Ship 2" || other.gameObject.tag == "Enemy Ship 3" || other.gameObject.tag == "Enemy Laser")
         {
             GameController.SharedInstance.ShowGameOver();  // If the player is hit by an enemy ship or laser it's game over.
             playerRenderer.enabled = false;       // We can't destroy the player game object straight away or any code from this point on will not be executed
@@ -96,56 +92,5 @@ public class ShipController : MonoBehaviour
         shootSoundFX.Play();
     }
 
-    void UpgradeWeapons()
-    {
 
-        // We check the upgrade state of the player and add the appropriate additional turret gameobjects to the active turrets List.
-
-        if (upgradeState == 0)
-        {
-            foreach (GameObject turret in tripleShotTurrets)
-            {
-                activePlayerTurrets.Add(turret);
-            }
-        }
-        else if (upgradeState == 1)
-        {
-            foreach (GameObject turret in wideShotTurrets)
-            {
-                activePlayerTurrets.Add(turret);
-            }
-        }
-        else if (upgradeState == 2)
-        {
-            StartCoroutine("ActivateScatterShotTurret");
-        }
-        else
-        {
-            return;
-        }
-        upgradeState++;
-    }
-
-    IEnumerator ActivateScatterShotTurret()
-    {
-
-        // The ScatterShot turret is shot independantly of the spacebar
-        // This Coroutine shoots the scatteshot at a reload interval
-
-        while (true)
-        {
-            foreach (GameObject turret in scatterShotTurrets)
-            {
-                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullet");
-                if (bullet != null)
-                {
-                    bullet.transform.position = turret.transform.position;
-                    bullet.transform.rotation = turret.transform.rotation;
-                    bullet.SetActive(true);
-                }
-            }
-            shootSoundFX.Play();
-            yield return new WaitForSeconds(scatterShotTurretReloadTime);
-        }
-    }
 }
