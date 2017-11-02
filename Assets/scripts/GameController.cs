@@ -20,7 +20,7 @@ public class GameController: MonoBehaviour {
 	public float startWait = 1.0f;
 	public float waveInterval = 2.0f;
 	public float spawnInterval = 0.5f;
-	public int enemiesPerWave = 5;
+	public int enemiesPerWave = 7;
 
   public GameObject leftBoundary;                   
   public GameObject rightBoundary;                  // References to the screen bounds
