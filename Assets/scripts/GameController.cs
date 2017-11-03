@@ -20,7 +20,7 @@ public class GameController: MonoBehaviour {
 	public float startWait = 1.0f;
 	public float waveInterval = 2.0f;
 	public float spawnInterval = 0.5f;
-	public int enemiesPerWave = 7;
+	public int enemiesPerWave = 5;
 
   public GameObject leftBoundary;                   
   public GameObject rightBoundary;                  // References to the screen bounds
@@ -48,7 +48,7 @@ public class GameController: MonoBehaviour {
                 Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight + 2, 0));
                 Vector3 spawnPosition = new Vector3(Random.Range(topLeft.x, topRight.x), topLeft.y, 0);
                 Quaternion spawnRotation = Quaternion.Euler(0, 0, 180);
-                if (waveType >= 5.0f)
+                if (waveType <= 3.33f)
                 {
                     GameObject enemy1 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 1");
                     if (enemy1 != null)
@@ -59,7 +59,7 @@ public class GameController: MonoBehaviour {
                     }
 
                 }
-                else
+                else if( waveType <= 6.66f )
                 {
                  
                     GameObject enemy2 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 2");
@@ -68,6 +68,18 @@ public class GameController: MonoBehaviour {
                         enemy2.transform.position = spawnPosition;
                         enemy2.transform.rotation = spawnRotation;
                         enemy2.SetActive(true);
+
+                    }
+                }
+				else if( waveType <= 10.0f )
+                {
+                 
+                    GameObject enemy3 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 3");
+                    if (enemy3 != null)
+                    {
+                        enemy3.transform.position = spawnPosition;
+                        enemy3.transform.rotation = spawnRotation;
+                        enemy3.SetActive(true);
 
                     }
                 }

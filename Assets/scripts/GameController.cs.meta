@@ -1,10 +1,20 @@
 fileFormatVersion: 2
 guid: 8bb12ef92fbc948dc80a021ac47b1e8d
-timeCreated: 1463087696
-licenseType: Pro
+timeCreated: 1509670925
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreLabel: {instanceID: 0}
+  - gameOverLabel: {instanceID: 0}
+  - restartGameButton: {instanceID: 0}
+  - enemyType1: {fileID: 179294, guid: bd12fa774659240f58d73af38be5b943, type: 2}
+  - enemyType2: {fileID: 179294, guid: ce6c116b4bb594120a580fc440afdea9, type: 2}
+  - enemyType3: {fileID: 179294, guid: c9ead3ad192552a40b3b87e9cf2d4256, type: 2}
+  - leftBoundary: {instanceID: 0}
+  - rightBoundary: {instanceID: 0}
+  - topBoundary: {instanceID: 0}
+  - bottomBoundary: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
