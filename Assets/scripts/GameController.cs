@@ -12,6 +12,7 @@ public class GameController: MonoBehaviour {
 	public Text gameOverLabel;
 	public Button restartGameButton;
 
+
 	public GameObject enemyType1;
 	public GameObject enemyType2;
     public GameObject enemyType3;
@@ -35,6 +36,7 @@ public class GameController: MonoBehaviour {
     void Start()
     {
         StartCoroutine(SpawnEnemyWaves());
+  
     }
 
     IEnumerator SpawnEnemyWaves()
