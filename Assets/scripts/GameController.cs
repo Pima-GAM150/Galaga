@@ -15,9 +15,10 @@ public class GameController: MonoBehaviour {
 	public GameObject enemyType1;
 	public GameObject enemyType2;
     public GameObject enemyType3;
+    public GameObject enemyType4;
+    public GameObject enemyType5;
 
-
-	public float startWait = 1.0f;
+    public float startWait = 1.0f;
 	public float waveInterval = 2.0f;
 	public float spawnInterval = 0.5f;
 	public int enemiesPerWave = 5;
@@ -48,7 +49,7 @@ public class GameController: MonoBehaviour {
                 Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight + 2, 0));
                 Vector3 spawnPosition = new Vector3(Random.Range(topLeft.x, topRight.x), topLeft.y, 0);
                 Quaternion spawnRotation = Quaternion.Euler(0, 0, 180);
-                if (waveType <= 3.33f)
+                if (waveType <= 1.99)
                 {
                     GameObject enemy1 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 1");
                     if (enemy1 != null)
@@ -59,7 +60,7 @@ public class GameController: MonoBehaviour {
                     }
 
                 }
-                else if( waveType <= 6.66f )
+                else if( waveType <= 3.99f )
                 {
                  
                     GameObject enemy2 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 2");
@@ -71,7 +72,7 @@ public class GameController: MonoBehaviour {
 
                     }
                 }
-				else if( waveType <= 10.0f )
+				else if( waveType <= 5.99f )
                 {
                  
                     GameObject enemy3 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 3");
@@ -80,6 +81,30 @@ public class GameController: MonoBehaviour {
                         enemy3.transform.position = spawnPosition;
                         enemy3.transform.rotation = spawnRotation;
                         enemy3.SetActive(true);
+                    }
+                }
+                else if (waveType <= 7.99f)
+                {
+
+                    GameObject enemy4 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 4");
+                    if (enemy4 != null)
+                    {
+                        enemy4.transform.position = spawnPosition;
+                        enemy4.transform.rotation = spawnRotation;
+                        enemy4.SetActive(true);
+                    }
+                }
+                else if (waveType <= 5.99f)
+                {
+
+                    GameObject enemy5 = ObjectPooler.SharedInstance.GetPooledObject("Enemy Ship 5");
+                    if (enemy5 != null)
+                    {
+                        enemy5.transform.position = spawnPosition;
+                        enemy5.transform.rotation = spawnRotation;
+                        enemy5.SetActive(true);
+
+
 
                     }
                 }
